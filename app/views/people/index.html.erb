@@ -41,7 +41,7 @@
         <td><%= person.national_id %></td>
         <td><%= person.phone_number %></td>
         <td><%=l person.created_at, format: :short %></td>
-        <td><%= person.user.email %></td>
+        <td><%= person.user_email %></td>
         <td class="text-center align-middle">
           <%# TODO: refactor: use a helper method %>
           <% if person.active %>
@@ -70,4 +70,8 @@
       </tr>
     <% end %>
   </tbody>
+
+  <div class="apple_pagination">
+    <%= will_paginate @people, :container => false %>
+  </div>
 </table>
